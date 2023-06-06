@@ -7,8 +7,14 @@
                         <router-link to="/" class="logo">
                             <img src="@/assets/images/Logo.svg" alt="">
                         </router-link>
-                        <ul class="nav__list">
-                            <li v-for="link in links" :key="link.title">
+                        <button class="nav__btn" @click="burgerOn">
+                            <img src="@/assets/images/menu.svg" alt="">
+                        </button>
+                        <ul class="nav__list" :class="{ active: burger }">
+                            <li class="nav__close" @click="burgerOff">
+                                <img src="@/assets/images/closeMenu.svg" alt="">
+                            </li>
+                            <li v-for="link in links" :key="link.title" @click="burger == false">
                                 <router-link class="nav__link" :to="link.url">{{ link.title }}</router-link>
                             </li>
                             <li>
@@ -30,7 +36,17 @@ const links = ref([
     { title: 'Главная', url: '/' },
     { title: 'Фильмы', url: '/movie' },
     { title: 'Сериалы', url: '/tv' },
-]) 
+])
+
+const burger = ref(false)
+const burgerOn = () => {
+    burger.value = true
+    document.body.style.overflow = 'hidden'
+}
+const burgerOff = () => {
+    burger.value = false
+    document.body.style.overflow = 'visible'
+}
 </script>
 
 <style lang="scss" scoped></style>
