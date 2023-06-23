@@ -9,28 +9,28 @@
 </template>
 
 <script setup>
-import { useUpcoming } from '@/stores/upcoming'
-import { onMounted, ref, computed } from 'vue'
-import UpcomingItem from './UpcomingItem.vue'
+import { useUpcoming } from '@/stores/upcoming';
+import { onMounted, ref, computed } from 'vue';
+import UpcomingItem from './UpcomingItem.vue';
 
 let upcomingStore = useUpcoming()
-
 const getUpcomingArr = computed(() => upcomingStore.upcoming)
+
 let slideView = ref(0)
-let timeout = - ref(null)
+let timeout = ref(null)
 
 let slide = () => {
     if (getUpcomingArr.value.length - 1 == slideView.value) slideView.value = 0
     else slideView.value++
     timeout = setTimeout(slide, 5000);
-
 }
 
 
-const slideNext = () => { 
+const slideNext = () => {
     clearTimeout(timeout)
     slide()
-}
+ }
+
 
 onMounted(() => {
     upcomingStore.getUpcoming()

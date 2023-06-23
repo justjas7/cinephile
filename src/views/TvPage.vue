@@ -1,6 +1,6 @@
 <template>
     <div>
-        Serials
+        serials
     </div>
 </template>
 

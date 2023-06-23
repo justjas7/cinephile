@@ -5,10 +5,10 @@
             <div class="main__upcoming-content">
                 <div class="main__upcoming-info">
                     <h1 class="main__upcoming-info-title">{{ movie.title }}</h1>
-                    <p class="main__upcoming-info-desc">{{ movie.overview }}</p>
+                    <p class="main__upcoming-info-desc">
+                        {{ movie.overview }} </p>
                     <BtnMore />
                 </div>
-
                 <div class="main__upcoming-next" @click="$emit('slideNext')">
                     <img :src="imgUrl + next.backdrop_path" class="main__upcoming-next-img" alt="">
                     <div class="main__upcoming-next-content">
@@ -23,8 +23,8 @@
 </template>
 
 <script setup>
-import { imgUrlFull, imgUrl } from '../../static'
-import BtnMore from '../UI/BtnMore.vue'
+import { imgUrlFull, imgUrl } from '../../static';
+import BtnMore from '../UI/BtnMore.vue';
 const props = defineProps({
     movie: {
         type: Object,
@@ -35,13 +35,13 @@ const props = defineProps({
         required: true
     },
     idx: {
-        type: Number,
-
+        type: Number
     },
     slideView: {
-        type: Number,
+        type: Number
     }
 })
+
 </script>
 
 <style lang="scss" scoped></style>

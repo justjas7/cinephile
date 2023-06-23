@@ -1,10 +1,6 @@
-import axios from "axios";
-import {
-    defineStore
-} from "pinia"
-import {
-    apiKey
-} from "../static"
+import axios from "axios"
+import { defineStore } from "pinia"
+import { apiKey } from "../static"
 
 export const useUpcoming = defineStore({
     id: 'upcoming',

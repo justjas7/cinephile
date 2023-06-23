@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,11 +8,13 @@
     outline: none;
     font-family: 'Raleway';
 }
-body{
+
+body {
     background: #141414;
     color: white;
 }
-.container{
+
+.container {
     max-width: 1350px;
     padding: 0 15px;
     margin: 0 auto;
@@ -20,8 +22,9 @@ body{
     height: 100%;
 }
 
-@mixin media ($size){
-    @media (max-width: #{$size}px){
-        @content 
+
+@mixin media($size) {
+    @media (max-width: #{$size}px) {
+        @content
     }
 }

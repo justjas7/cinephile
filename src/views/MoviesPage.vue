@@ -1,6 +1,6 @@
 <template>
     <div>
-        Movies
+        Movie
     </div>
 </template>
 

@@ -42,7 +42,6 @@
         align-items: center;
         gap: 30px;
 
-
         @include media(800) {
             position: fixed;
             flex-direction: column;
@@ -57,7 +56,6 @@
             opacity: 0;
             visibility: hidden;
             transition: 0.2s;
-            gap: 50px;
 
             &.active {
                 opacity: 1;
@@ -74,27 +72,28 @@
             }
 
         }
+
     }
 
     &__link {
-        color: #ffffff80;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Raleway';
         font-size: 18px;
         font-weight: 700;
         line-height: 21px;
         transition: 0.3s;
+        color: #FFFFFF99;
         position: relative;
         padding: 34px 0;
 
         &.router-link-exact-active {
-            color: white;
+            color: white
         }
 
         &::after {
-            content: '';
-            background: #149a03;
-            height: 0;
+            content: "";
+            background: #149A03;
             width: 0;
+            height: 0;
             position: absolute;
             bottom: 10px;
             border-radius: 50%;
@@ -106,5 +105,6 @@
             width: 15px;
             height: 15px;
         }
+
     }
-} 
+}
