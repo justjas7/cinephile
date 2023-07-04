@@ -1,0 +1,82 @@
+.infoblock {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    margin-top: 30px;
+    transition: height 500ms;
+
+    @include media(900) {
+        display: none;
+    }
+
+    &.active {
+        height: 700px;
+    }
+
+    &__close {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        background: rgba(20, 20, 20, 0.70);
+        border-radius: 50%;
+        padding: 20px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    &__block {
+        height: 100%;
+
+        &-img {
+            height: 100%;
+            width: 60%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            object-fit: cover;
+        }
+
+        &-content {
+            background: linear-gradient(90deg, #000 40%, rgba(0, 0, 0, 0.20) 60%, rgba(0, 0, 0, 0.00) 70%);
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            height: 100%;
+            width: 50%;
+            padding-left: 50px;
+
+            &-title {
+                font-size: 50px;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            &-text {
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 30px;
+                color: #fff;
+
+            }
+
+
+            &-desc {
+                font-family: 'Montserrat';
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 30px;
+                color: rgba(255, 255, 255, 0.60);
+                display: flex;
+                gap: 30px;
+                align-items: center;
+            }
+        }
+    }
+}
